@@ -265,7 +265,9 @@
         border: 1px solid rgba(255,253,251,0.14);
         aspect-ratio: 9/16;
         max-height: 480px;
+        width: 100%;
         display: flex; align-items: center; justify-content: center;
+        margin: 0 auto; /* センター */
       }
       .movie-placeholder img {
         position: absolute; inset: 0; width: 100%; height: 100%;
@@ -274,9 +276,9 @@
       .movie-placeholder .play-badge {
         position: relative; z-index: 1;
         text-align: center; color: var(--white);
+        display: flex; flex-direction: column; align-items: center;
       }
       .movie-placeholder .play-badge span {
-        display: block;
         width: 64px; height: 64px; margin: 0 auto 14px;
         border-radius: 50%;
         background: rgba(215,162,179,0.9);
@@ -284,7 +286,7 @@
         font-size: 1.6rem;
       }
       .movie-placeholder .play-badge p {
-        margin: 0; font-size: 0.88rem; color: rgba(255,253,251,0.8); font-weight: 700;
+        margin: 0; font-size: 0.88rem; color: rgba(255,253,251,0.8); font-weight: 700; text-align: center;
       }
 
       /* Works */
@@ -334,7 +336,7 @@
       }
       .cta h2 { color: var(--white); font-size: clamp(1.8rem, 7vw, 2.6rem); }
       .cta p { margin: 22px auto 26px; color: rgba(255,253,251,0.78); line-height: 2; max-width: 28em; }
-      .cta .safe-note { margin: 14px 0 0; font-size: 0.8rem; color: rgba(255,253,251,0.5); }
+      .cta .safe-note { margin: 14px 0 0; font-size: 0.8rem; color: rgba(255,253,251,0.5); text-align: center; display: block; }
       .line-btn { color: #fff; background: var(--line); box-shadow: 0 18px 42px rgba(6,199,85,0.24); }
 
       footer {
@@ -389,7 +391,7 @@
           </p>
           <div class="hero-actions">
             <a class="button primary" href="https://lin.ee/6nvEYwt">まずはLINEで無料案内を受け取る</a>
-            <a class="button ghost" href="#empathy">料理の悩みから読む</a>
+            <a class="button ghost" href="#lesson-info">この教室について読む</a>
           </div>
         </div>
       </header>
@@ -486,7 +488,7 @@
       <section class="profile">
         <div class="section-head reveal">
           <p class="eyebrow">Teacher</p>
-          <h2 class="section-title">MAIKO先生と、<br />台所の不安をほどく時間。</h2>
+          <h2 class="section-title">MAIKOと、<br />台所の不安をほどく時間。</h2>
         </div>
         <div class="profile-grid">
           <div class="portrait reveal">
