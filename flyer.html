@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>W KITCHEN LAB. チラシ</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap');
+
+    :root {
+      --pink: #d7a2b3;
+      --pink-soft: #ead0d8;
+      --mauve: #8e6f7e;
+      --mauve-deep: #674f5b;
+      --greige: #ede7df;
+      --greige-light: #f8f3ef;
+      --charcoal: #3d3733;
+      --smoke: #6d625b;
+      --white: #fffdfb;
+      --insta-grad: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #ccc;
+      font-family: 'Noto Sans JP', sans-serif;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* A4: 210mm × 297mm */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 10mm auto;
+      background: var(--greige-light);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ===== TOP BAND ===== */
+    .top-band {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 7mm 10mm 6mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-band::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(215,162,179,0.25) 0%, transparent 60%);
+    }
+    .brand-row {
+      display: flex; align-items: center; justify-content: space-between;
+      position: relative; z-index: 1;
+    }
+    .brand-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 5.5mm; font-weight: 700; letter-spacing: 0.15em;
+      color: var(--white);
+    }
+    .brand-tagline {
+      font-size: 2.8mm; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; margin-top: 1mm;
+    }
+    .insta-badge {
+      padding: 1.5mm 4mm;
+      border-radius: 99px;
+      background: var(--insta-grad);
+      font-size: 2.5mm; font-weight: 900; color: #fff; letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    /* ===== HERO AREA ===== */
+    .hero-area {
+      background: var(--charcoal);
+      padding: 6mm 10mm 7mm;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-area::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(225,48,108,0.12), transparent 50%);
+    }
+    .hero-date {
+      position: relative; z-index: 1;
+      display: inline-block;
+      padding: 2mm 6mm;
+      border: 0.3mm solid rgba(255,255,255,0.35);
+      border-radius: 2mm;
+      background: rgba(255,255,255,0.07);
+      font-size: 5mm; font-weight: 900;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      margin-bottom: 4mm;
+    }
+    .hero-catch {
+      position: relative; z-index: 1;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 8.5mm; font-weight: 900;
+      color: var(--white); line-height: 1.25;
+      margin-bottom: 3mm;
+    }
+    .hero-catch em { font-style: normal; color: var(--pink); }
+    .hero-sub {
+      position: relative; z-index: 1;
+      font-size: 3.2mm; color: rgba(255,255,255,0.75);
+      line-height: 1.8; margin-bottom: 4mm;
+    }
+    .limit-row {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: center; gap: 3mm;
+    }
+    .limit-badge {
+      padding: 1.5mm 5mm;
+      border-radius: 99px;
+      background: #e53e3e;
+      color: #fff; font-size: 3mm; font-weight: 900;
+    }
+    .limit-text { font-size: 3mm; color: rgba(255,255,255,0.7); }
+
+    /* ===== PRICE BOX ===== */
+    .price-row {
+      display: flex; align-items: stretch; gap: 0;
+      background: var(--white);
+      border-top: 1.5mm solid var(--pink);
+    }
+    .price-left {
+      flex: 1; padding: 5mm 8mm;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .price-label {
+      font-size: 2.5mm; font-weight: 900; color: var(--mauve);
+      letter-spacing: 0.12em; margin-bottom: 2mm;
+    }
+    .price-before {
+      font-size: 4mm; color: #bbb; text-decoration: line-through; margin-bottom: 1mm;
+    }
+    .price-arrow-row {
+      display: flex; align-items: center; gap: 3mm;
+    }
+    .price-arrow { font-size: 5mm; color: var(--pink); }
+    .price-after {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14mm; font-weight: 900;
+      color: #dc2743; line-height: 1;
+    }
+    .price-unit { font-size: 4mm; color: var(--smoke); align-self: flex-end; margin-bottom: 1mm; }
+    .price-note { font-size: 2.3mm; color: var(--smoke); margin-top: 1.5mm; line-height: 1.7; }
+
+    .price-right {
+      width: 55mm; padding: 5mm 8mm;
+      background: var(--greige);
+      display: flex; flex-direction: column; justify-content: center;
+      border-left: 0.3mm solid var(--pink-soft);
+    }
+    .saving-tag {
+      display: inline-block; padding: 1.5mm 4mm;
+      border-radius: 99px;
+      background: rgba(220,39,67,0.1); color: #dc2743;
+      font-size: 2.8mm; font-weight: 900; margin-bottom: 2.5mm;
+    }
+    .price-right p { font-size: 2.5mm; color: var(--smoke); line-height: 1.8; }
+
+    /* ===== CONCEPT ===== */
+    .concept {
+      padding: 6mm 10mm;
+      background: var(--greige-light);
+      border-bottom: 0.3mm solid rgba(61,55,51,0.1);
+    }
+    .concept-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 5.5mm; font-weight: 700; color: var(--charcoal);
+      line-height: 1.4; margin-bottom: 3.5mm; text-align: center;
+    }
+    .concept-title em { color: var(--mauve); font-style: normal; }
+    .pillars {
+      display: flex; gap: 3mm;
+    }
+    .pillar {
+      flex: 1; padding: 3mm 3mm;
+      border-radius: 2mm;
+      background: var(--white);
+      border: 0.3mm solid rgba(215,162,179,0.4);
+      text-align: center;
+    }
+    .pillar .p-icon { font-size: 5mm; display: block; margin-bottom: 1.5mm; }
+    .pillar .p-name { font-size: 3mm; font-weight: 900; color: var(--mauve-deep); margin-bottom: 1mm; }
+    .pillar .p-desc { font-size: 2.2mm; color: var(--smoke); line-height: 1.7; }
+
+    /* ===== LIVE SCHEDULE ===== */
+    .schedule {
+      padding: 4mm 10mm;
+      background: var(--charcoal);
+      flex: 1;
+    }
+    .schedule-title {
+      font-size: 3mm; font-weight: 900; color: var(--pink);
+      letter-spacing: 0.15em; margin-bottom: 3mm; text-align: center;
+    }
+    .tl { display: flex; flex-direction: column; gap: 1.5mm; }
+    .tl-row {
+      display: flex; align-items: center; gap: 4mm;
+      padding: 2mm 0;
+      border-bottom: 0.2mm solid rgba(255,255,255,0.08);
+    }
+    .tl-row:last-child { border-bottom: none; }
+    .tl-time { width: 16mm; font-size: 3mm; font-weight: 900; color: var(--pink); flex-shrink: 0; }
+    .tl-body strong { display: block; font-size: 3mm; color: var(--white); font-weight: 700; }
+    .tl-body span { font-size: 2.3mm; color: rgba(255,255,255,0.55); }
+
+    /* ===== BOTTOM CTA ===== */
+    .bottom-cta {
+      background: var(--mauve-deep);
+      padding: 5mm 10mm;
+      display: flex; align-items: center; gap: 6mm;
+    }
+    .qr-area {
+      width: 24mm; height: 24mm; flex-shrink: 0;
+      background: var(--white);
+      border-radius: 2mm;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2mm; color: #aaa; text-align: center;
+      padding: 2mm;
+    }
+    .cta-text { flex: 1; }
+    .cta-text .cta-main {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 5.5mm; font-weight: 700; color: var(--white);
+      line-height: 1.3; margin-bottom: 1.5mm;
+    }
+    .cta-text .cta-main em { font-style: normal; color: var(--pink); }
+    .cta-text p { font-size: 2.5mm; color: rgba(255,255,255,0.7); line-height: 1.8; }
+    .line-logo {
+      flex-shrink: 0;
+      display: flex; flex-direction: column; align-items: center; gap: 1.5mm;
+    }
+    .line-btn-print {
+      padding: 2.5mm 6mm;
+      border-radius: 2mm;
+      background: #06c755;
+      color: #fff; font-size: 3mm; font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+    .line-url { font-size: 2mm; color: rgba(255,255,255,0.5); }
+
+    /* Print */
+    @media print {
+      body { background: none; }
+      .page { margin: 0; box-shadow: none; }
+    }
+    @media screen {
+      .page { box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- TOP BAND -->
+    <div class="top-band">
+      <div class="brand-row">
+        <div>
+          <div class="brand-name">W KITCHEN LAB.</div>
+          <div class="brand-tagline">レシピで教えない、料理教室。</div>
+        </div>
+        <div class="insta-badge">📸 インスタライブ限定</div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero-area">
+      <div class="hero-date">6月17日（水）21:00〜 Instagram Live</div>
+      <h1 class="hero-catch">
+        ライブ参加者だけの<br />
+        <em>特別入会キャンペーン</em>🎉
+      </h1>
+      <p class="hero-sub">
+        当日ライブを見てくれた方限定で特別価格をご案内します。<br />
+        毎日のごはん、名もなき料理を楽しく作ろう🫧
+      </p>
+      <div class="limit-row">
+        <span class="limit-badge">🔥 先着30名限定</span>
+        <span class="limit-text">当日ライブ参加者のみ</span>
+      </div>
+    </div>
+
+    <!-- PRICE -->
+    <div class="price-row">
+      <div class="price-left">
+        <div class="price-label">ライブ限定 特別月額</div>
+        <div class="price-before">通常 月額 2,000円</div>
+        <div class="price-arrow-row">
+          <span class="price-arrow">→</span>
+          <span class="price-after">1,000</span>
+          <span class="price-unit">円 / 月</span>
+        </div>
+        <p class="price-note">
+          初月から適用・いつでも解約OK<br />
+          ※6/17ライブ参加・先着30名さまのみ
+        </p>
+      </div>
+      <div class="price-right">
+        <span class="saving-tag">毎月1,000円おトク🎉</span>
+        <p>
+          一度ご入会いただければ<br />
+          <strong>ずっと1,000円が続きます</strong>。<br />
+          翌日以降は通常料金に戻ります。<br />
+          この機会をお見逃しなく！
+        </p>
+      </div>
+    </div>
+
+    <!-- CONCEPT -->
+    <div class="concept">
+      <p class="concept-title">
+        「時短 × 本格的な味 × <em>応用力</em>」が身につき<br />
+        <em>一生のスキル</em>が身につく料理教室✨
+      </p>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="p-icon">⏱</span>
+          <div class="p-name">時短</div>
+          <div class="p-desc">「なぜそうするか」がわかると無駄な手間がなくなる</div>
+        </div>
+        <div class="pillar">
+          <span class="p-icon">🍳</span>
+          <div class="p-name">本格的な味</div>
+          <div class="p-desc">火加減・調味の原理を学びプロの感覚が身につく</div>
+        </div>
+        <div class="pillar">
+          <span class="p-icon">🌿</span>
+          <div class="p-name">応用力</div>
+          <div class="p-desc">冷蔵庫の中身で献立が組み立てられる一生のスキル</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHEDULE -->
+    <div class="schedule">
+      <div class="schedule-title">▶ LIVE SCHEDULE — 6/17（水）21:00〜</div>
+      <div class="tl">
+        <div class="tl-row">
+          <div class="tl-time">21:00</div>
+          <div class="tl-body"><strong>ライブ開始・自己紹介</strong><span>教室への想いをお話しします</span></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">〜21:20</div>
+          <div class="tl-body"><strong>料理ミニレッスン（実演）</strong><span>今夜から使えるコツをライブで実演！</span></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">〜21:45</div>
+          <div class="tl-body"><strong>Q&amp;A タイム</strong><span>コメントでの質問にお答えします</span></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">21:45〜</div>
+          <div class="tl-body"><strong>🎉 特別キャンペーンのご案内</strong><span>先着30名・月額1,000円のご案内</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="bottom-cta">
+      <div class="qr-area">
+        QRコード<br />（LINE登録）<br />ここに貼付
+      </div>
+      <div class="cta-text">
+        <div class="cta-main">
+          まずはLINEに<br />
+          <em>登録しておこう！</em>
+        </div>
+        <p>
+          ライブ開始のリマインドをお届け📩<br />
+          作るたびに「わかった！」が増えていく<br />
+          料理の楽しさ、一緒に重ねましょう🌿
+        </p>
+      </div>
+      <div class="line-logo">
+        <div class="line-btn-print">💬 LINE登録</div>
+        <div class="line-url">lin.ee/6nvEYwt</div>
+        <div style="font-size:2mm;color:rgba(255,255,255,0.4);margin-top:1mm;text-align:center;">
+          強引な勧誘・個人情報<br />の第三者提供はしません
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Print button (screen only) -->
+  <div style="text-align:center;margin:8mm 0;font-family:sans-serif;">
+    <button onclick="window.print()"
+      style="padding:10px 28px;background:#674f5b;color:#fff;border:none;border-radius:6px;font-size:15px;cursor:pointer;font-weight:bold;">
+      🖨️ A4で印刷する
+    </button>
+    <p style="margin-top:6px;font-size:12px;color:#888;">
+      ブラウザの印刷設定で「用紙サイズ：A4」「余白：なし」に設定してください
+    </p>
+  </div>
+</body>
+</html>
